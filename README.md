@@ -3,25 +3,25 @@ https://colab.research.google.com/drive/1y_PGcgru6oK2l4RvFnP_2j6zqP0V71Hh#scroll
 ## 1. Install dependencies
 !pip install -q langchain langchain-openai python-dotenv
 
-# 2. Import libraries
+## 2. Import libraries
 import os
 from langchain_openai import ChatOpenAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 
-# 3. Set OpenAI API Key
-# ⚠️ Yahan apna OpenAI API key dalo. Free key: https://platform.openai.com/api-keys
+## 3. Set OpenAI API Key
+## ⚠️ Yahan apna OpenAI API key dalo. Free key: https://platform.openai.com/api-keys
 
 
-# 4. Initialize LLM
-# gpt-3.5-turbo sasta + fast hai. Agar nahi hai to gpt-4o-mini use karo
+## 4. Initialize LLM
+## gpt-3.5-turbo sasta + fast hai. Agar nahi hai to gpt-4o-mini use karo
 llm = ChatOpenAI(
     model="gpt-3.5-turbo",
     temperature=0.3  # Low temp = professional + consistent replies
 )
 print("✅ LLM Initialized Successfully")
 
-# 5. Build the Agent using Prompt Template
+## 5. Build the Agent using Prompt Template
 email_prompt = PromptTemplate(
     input_variables=["email_text"],
     template="""
@@ -41,11 +41,11 @@ Now write the reply email:
 """
 )
 
-# Create the chain = Agent
+## Create the chain = Agent
 reply_agent = LLMChain(llm=llm, prompt=email_prompt)
 print("✅ Email Reply Agent Built Successfully")
 
-# Function to generate a polite email reply
+## Function to generate a polite email reply
 
 def generate_email_reply(email_text):
     
