@@ -9,10 +9,6 @@ from langchain_openai import ChatOpenAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 
-## 3. Set OpenAI API Key
-## ⚠️ Yahan apna OpenAI API key dalo. Free key: https://platform.openai.com/api-keys
-
-
 ## 4. Initialize LLM
 ## gpt-3.5-turbo sasta + fast hai. Agar nahi hai to gpt-4o-mini use karo
 llm = ChatOpenAI(
